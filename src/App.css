@@ -4,16 +4,26 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Smooth scrolling für alle Geräte */
+  scroll-behavior: smooth;
+  /* Verhindere Scroll-Bounce auf iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Verhindere horizontales Scrollen auf mobilen Geräten */
+  overflow-x: hidden;
 }
 
 .App {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Navigation */
@@ -83,6 +93,9 @@ body {
 /* Main Content */
 main {
   padding-top: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .section {
@@ -96,6 +109,16 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  /* Verhindere Überlauf auf mobilen Geräten */
+  overflow-x: hidden;
+}
+
+/* Bessere Textformatierung für mobile Geräte */
+p, li {
+  /* Verhindere zu lange Wörter, die Überlauf verursachen */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Hero Section */
@@ -487,6 +510,12 @@ main {
   font-family: inherit;
   transition: all 0.3s ease;
   background-color: #f9fafb;
+  /* Verhindere Auto-Zoom auf iOS beim Focus */
+  font-size: 16px;
+  /* Bessere Touch-Unterstützung */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .form-group input:focus,
@@ -649,48 +678,335 @@ main {
 }
 
 /* Responsive Design */
+
+/* Tablet und kleinere Desktops */
+@media (max-width: 1024px) {
+  .nav-links button {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-logo {
+    width: 240px;
+  }
+
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .services-grid,
+  .intro-highlights {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Mobile Geräte */
 @media (max-width: 768px) {
+  /* Navigation */
+  .navbar {
+    padding: 0.75rem 0;
+  }
+
   .nav-container {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
   }
 
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.3rem;
+    gap: 0.4rem;
+    width: 100%;
   }
 
   .nav-links button {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     padding: 0.6rem 1rem;
+    flex: 1;
+    min-width: 70px;
+    white-space: nowrap;
   }
 
+  /* Hero Section */
   .hero {
     min-height: 100vh;
-    padding: 2rem 1rem;
-    padding-top: calc(70px + 2rem);
+    padding: 2rem 1.25rem;
+    padding-top: calc(80px + 2rem);
   }
 
   .hero-logo {
-    width: 120px;
+    width: 160px;
     margin-bottom: 1.5rem;
   }
 
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .hero-h1 {
+    font-size: 2.2rem;
   }
 
   .hero-content h2 {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-h2 {
+    font-size: 1.15rem;
   }
 
   .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Sections */
+  .section {
+    padding: 2.5rem 1.25rem;
+    min-height: auto;
+  }
+
+  .about h2,
+  .services h2,
+  .contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Quote */
+  .quote {
+    padding: 1.5rem;
+    margin: 1.5rem auto 2rem;
+  }
+
+  .quote p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .quote cite {
+    font-size: 0.9rem;
+  }
+
+  /* Intro Card */
+  .intro-card {
+    flex-direction: column;
+    padding: 1.75rem;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .intro-icon {
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
+  }
+
+  .intro-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* Intro Highlights */
+  .intro-highlights {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .intro-highlight {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.75rem;
+    gap: 1rem;
+  }
+
+  .highlight-icon {
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+
+  .highlight-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .highlight-content p {
     font-size: 1rem;
   }
 
-  .section {
-    padding: 3rem 1rem;
-    min-height: auto;
+  /* Team */
+  .team {
+    padding: 2rem 1.5rem;
+  }
+
+  .team h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .team-member {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .team-member h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .team-member p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .team-mission {
+    padding: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Services */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .service-card {
+    padding: 1.75rem;
+  }
+
+  .service-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Highlights */
+  .highlights {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .highlight-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .highlight-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .highlight-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Contact */
+  .contact-intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-form-container,
+  .contact-info-side {
+    padding: 1.75rem;
+  }
+
+  .contact-form-container h3,
+  .contact-info-side h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form {
+    gap: 1.25rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .form-group textarea {
+    min-height: 100px;
+  }
+
+  .submit-button {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    /* Touch-freundlicher Button */
+    min-height: 48px;
+  }
+
+  .contact-details {
+    gap: 1.5rem;
+  }
+
+  .contact-detail-item {
+    gap: 1rem;
+  }
+
+  .detail-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .contact-detail-item h4 {
+    font-size: 1rem;
+  }
+
+  .contact-detail-item p,
+  .contact-detail-item a {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 2.5rem 1.25rem 1.5rem;
   }
 
   .footer-content {
@@ -698,53 +1014,152 @@ main {
     gap: 2rem;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  .footer-section h3 {
+    font-size: 1.1rem;
   }
 
-  .highlights {
-    grid-template-columns: 1fr;
+  .footer-section p,
+  .footer-section a {
+    font-size: 0.95rem;
+  }
+
+  .footer-logo {
+    max-width: 200px;
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Sehr kleine Mobile Geräte */
+@media (max-width: 480px) {
+  .nav-links button {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .hero-logo {
+    width: 140px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1rem;
+  }
+
+  .hero-h2 {
+    font-size: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .about h2,
+  .services h2,
+  .contact h2 {
+    font-size: 1.75rem;
+  }
+
+  .quote {
+    padding: 1.25rem;
   }
 
   .quote p {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
   }
 
   .intro-card {
-    flex-direction: column;
-    padding: 2rem;
-    text-align: center;
+    padding: 1.5rem;
   }
 
-  .intro-icon {
-    margin: 0 auto;
+  .intro-card p {
+    font-size: 1rem;
   }
 
-  .intro-highlights {
-    grid-template-columns: 1fr;
+  .highlight-content h4 {
+    font-size: 1.1rem;
   }
 
-  .intro-highlight {
-    flex-direction: column;
-    text-align: center;
+  .team {
+    padding: 1.5rem 1rem;
   }
 
-  .highlight-icon {
-    margin: 0 auto;
+  .team h3 {
+    font-size: 1.5rem;
   }
 
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .highlight-box {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .highlight-box h3 {
+    font-size: 1.3rem;
   }
 
   .contact-form-container,
   .contact-info-side {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .contact-form-container h3,
   .contact-info-side h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .footer {
+    padding: 2rem 1rem 1.25rem;
+  }
+}
+
+/* Touch-optimierte Interaktionen für alle mobilen Geräte */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch-freundlichere Buttons */
+  .nav-links button {
+    min-height: 44px;
+  }
+
+  .submit-button {
+    min-height: 48px;
+  }
+
+  /* Vergrößerte Touch-Targets */
+  .service-card,
+  .intro-highlight {
+    cursor: pointer;
+  }
+
+  /* Deaktiviere Hover-Effekte auf Touch-Geräten */
+  .service-card:hover,
+  .intro-highlight:hover {
+    transform: none;
+  }
+
+  /* Touch-Feedback */
+  .service-card:active,
+  .intro-highlight:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  .nav-links button:active {
+    transform: scale(0.95);
   }
 }
