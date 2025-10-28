@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-
+import { FaTrophy, FaDice , FaSchool, FaBook, FaChild, FaGlassCheers, FaGraduationCap, FaChurch, FaEnvelope, FaMapMarkerAlt, FaUsers, FaGamepad } from 'react-icons/fa';
 import './App.css';
+import { FiTarget } from 'react-icons/fi';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -112,9 +113,9 @@ function App() {
             
             <div className="intro-text">
               <div className="intro-card">
-                <div className="intro-icon">🎯</div>
+                <div className="intro-icon"><FiTarget style={{ color: 'white' }} /></div>
                 <p>
-                  Wir haben es uns zur Aufgabe gemacht Gesellschaftsspiele in der Pädagogik einzusetzen. 
+                  Wir haben es uns zur Aufgabe gemacht Gesellschaftsspiele in der Pädagogik einzusetzen.
                   Auf <strong>10 Jahre Erfahrung</strong> im Bereich Spiele können wir zurückgreifen. Spiele eignen sich nicht 
                   nur als reine Freizeitbeschäftigung, sondern sind Fördermöglichkeit im Bereich Gefühlskontrolle, 
                   Emotionale Entwicklung, Sozialkompetenz und vieles mehr.
@@ -123,7 +124,7 @@ function App() {
 
               <div className="intro-highlights">
                 <div className="intro-highlight">
-                  <div className="highlight-icon">🏆</div>
+                  <div className="intro-icon"><FaTrophy style={{ color: 'white' }} /></div>
                   <div className="highlight-content">
                     <h4>UNESCO Kulturerbe 2025</h4>
                     <p>Die Aufnahme in die Liste zum UNESCO Immaterielles Kulturerbe zeigt, wie wichtig Spiele und das Spielen ist.</p>
@@ -131,7 +132,7 @@ function App() {
                 </div>
 
                 <div className="intro-highlight">
-                  <div className="highlight-icon">🎲</div>
+                  <div className="intro-icon"><FaDice style={{ color: 'white' }} /></div>
                   <div className="highlight-content">
                     <h4>Fast 800 Spiele</h4>
                     <p>Unser Bestand wächst regelmäßig - wir sind immer auf dem neusten Stand und es ist für jede Gelegenheit etwas dabei.</p>
@@ -180,37 +181,37 @@ function App() {
             
             <div className="services-grid">
               <div className="service-card">
-                <div className="service-icon">🏫</div>
+                <div className="service-icon"><FaSchool style={{ color: 'white' }} /></div>
                 <h3>Schulen & Betreuung</h3>
                 <p>Wir kommen zu euch an Schulen und bringen spielerisches Lernen direkt ins Klassenzimmer.</p>
               </div>
 
               <div className="service-card">
-                <div className="service-icon">📚</div>
+                <div className="service-icon"><FaBook style={{ color: 'white' }} /></div>
                 <h3>Bibliotheken</h3>
                 <p>Spieleveranstaltungen in Bibliotheken für Kinder und Familien.</p>
               </div>
 
               <div className="service-card">
-                <div className="service-icon">🧒</div>
+                <div className="service-icon"><FaChild style={{ color: 'white' }} /></div>
                 <h3>Kindergärten</h3>
                 <p>Altersgerechte Spiele zur Förderung der kindlichen Entwicklung.</p>
               </div>
 
               <div className="service-card">
-                <div className="service-icon">🎉</div>
+                <div className="service-icon"><FaGlassCheers style={{ color: 'white' }} /></div>
                 <h3>Events</h3>
                 <p>Unterschiedlichste Events und Veranstaltungen rund um Gesellschaftsspiele.</p>
               </div>
 
               <div className="service-card">
-                <div className="service-icon">🎓</div>
+                <div className="service-icon"><FaGraduationCap style={{ color: 'white' }} /></div>
                 <h3>VHS-Kurse</h3>
                 <p>Wir geben Kurse an der VHS zum Thema Gesellschaftsspiele.</p>
               </div>
 
               <div className="service-card">
-                <div className="service-icon">⛪</div>
+                <div className="service-icon"><FaChurch style={{ color: 'white' }} /></div>
                 <h3>Kirchen-Events</h3>
                 <p>Mehrmals pro Jahr ein Spiele-Event mit der evangelischen Kirche Heusenstamm.</p>
               </div>
@@ -293,7 +294,7 @@ function App() {
                 <h3>Kontaktinformationen</h3>
                 <div className="contact-details">
                   <div className="contact-detail-item">
-                    <div className="detail-icon">✉</div>
+                    <div className="detail-icon"><FaEnvelope style={{ color: 'white' }} /></div>
                     <div>
                       <h4>E-Mail</h4>
                       <a href="mailto:Brettspielgeister@web.de">Brettspielgeister@web.de</a>
@@ -301,7 +302,7 @@ function App() {
                   </div>
 
                   <div className="contact-detail-item">
-                    <div className="detail-icon">📍</div>
+                    <div className="detail-icon"><FaMapMarkerAlt style={{ color: 'white' }} /></div>
                     <div>
                       <h4>Standort</h4>
                       <p>Heusenstamm, Deutschland</p>
@@ -309,7 +310,7 @@ function App() {
                   </div>
 
                   <div className="contact-detail-item">
-                    <div className="detail-icon">�</div>
+                    <div className="detail-icon"><FaUsers style={{ color: 'white' }} /></div>
                     <div>
                       <h4>Ansprechpartner</h4>
                       <p>Julia und Marco Dornburg</p>
@@ -317,7 +318,7 @@ function App() {
                   </div>
 
                   <div className="contact-detail-item">
-                    <div className="detail-icon">🎲</div>
+                    <div className="detail-icon"><FaDice  style={{ color: 'white' }} /></div>
                     <div>
                       <h4>Unsere Expertise</h4>
                       <p>Zertifizierte Fachkräfte für Gesellschaftsspiele</p>
