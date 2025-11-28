@@ -189,7 +189,7 @@ function App() {
               <div className="service-card">
                 <div className="service-icon"><FaBook style={{ color: 'white' }} /></div>
                 <h3>Bibliotheken</h3>
-                <p>Spieleveranstaltungen in Bibliotheken für Kinder und Familien.</p>
+                <p>Spieleveranstaltungen in Bibliotheken für Kinder, Familien und Senioren oder für alle Altergruppen, von jung bis alt.</p>
               </div>
 
               <div className="service-card">
@@ -224,7 +224,7 @@ function App() {
               </div>
               <div className="highlight-box">
                 <h3>10 Jahre Erfahrung</h3>
-                <p>Langjährige Expertise im Bereich Gesellschaftsspiele und Pädagogik.</p>
+                <p>Langjährige Expertise im Bereich Gesellschaftsspiele.</p>
               </div>
             </div>
           </div>
